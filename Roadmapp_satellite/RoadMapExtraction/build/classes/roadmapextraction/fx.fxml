@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="roadmapextraction.FxController">
+   <left>
+      <AnchorPane prefHeight="450.0" prefWidth="288.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="upload_button" layoutX="55.0" layoutY="45.0" mnemonicParsing="false" onAction="#setUpload_button" prefHeight="26.0" prefWidth="186.0" text="Upload" AnchorPane.leftAnchor="55.0" AnchorPane.rightAnchor="47.0" AnchorPane.topAnchor="45.0" />
+            <Button fx:id="grayScale_button" layoutX="53.0" layoutY="97.0" mnemonicParsing="false" onAction="#setGrayScale_button" prefHeight="25.0" prefWidth="186.0" text="To Grayscale" AnchorPane.topAnchor="97.0" />
+            <Button fx:id="threshold_button" layoutX="58.0" layoutY="158.0" mnemonicParsing="false" onAction="#setThreshold_button" prefHeight="26.0" prefWidth="109.0" text="Thereshold" AnchorPane.leftAnchor="58.0" AnchorPane.rightAnchor="121.0" AnchorPane.topAnchor="158.0" />
+            <Button fx:id="cluster_button" layoutX="55.0" layoutY="216.0" mnemonicParsing="false" onAction="#clusterImage" prefHeight="25.0" prefWidth="186.0" text="Cluster" AnchorPane.topAnchor="216.0" />
+            <Button fx:id="show_elongated_button" layoutX="52.0" layoutY="330.0" mnemonicParsing="false" onAction="#setShow_elongated_button" prefHeight="25.0" prefWidth="186.0" text="Show Road Path" AnchorPane.topAnchor="330.0" />
+            <Button fx:id="thining_button" layoutX="52.0" layoutY="383.0" mnemonicParsing="false" onAction="#thining" prefHeight="25.0" prefWidth="186.0" text="Thining" />
+            <Button fx:id="test" layoutX="52.0" layoutY="450.0" mnemonicParsing="false" onAction="#setTest_button" prefHeight="25.0" prefWidth="186.0" text="Final Output" AnchorPane.topAnchor="450.0" />
+            <TextField fx:id="threshold_tf" layoutX="168.0" layoutY="159.0" prefHeight="26.0" prefWidth="73.0" promptText="0-200" text="100-150" AnchorPane.leftAnchor="168.0" AnchorPane.rightAnchor="47.0" AnchorPane.topAnchor="159.0" />
+          
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="574.0" prefWidth="350.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="source_iv" fitHeight="300.0" fitWidth="330.0" layoutX="23.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="175.0" AnchorPane.leftAnchor="23.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="99.0">
+               <image>
+                  <Image url="@../../../../upload.jpg" />
+               </image></ImageView>
+         </children></AnchorPane>
+   </center>
+   <right>
+      <AnchorPane prefHeight="537.0" prefWidth="550.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="processed_iv" fitHeight="468.0" fitWidth="514.0" layoutX="46.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="46.0" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="46.0">
+               <image>
+                  <Image url="@../../../../upload.jpg" />
+               </image></ImageView>
+         </children></AnchorPane>
+   </right>
+    <bottom>
+      <AnchorPane prefHeight="50.0" prefWidth="1200.0" style="-fx-background-color: #DAE0E2;" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="info_tf" alignment="TOP_RIGHT" layoutX="304.0" layoutY="14.0" prefHeight="26.0" prefWidth="870.0" style="-fx-background-radius: 0; -fx-background-color: #DAE0E2;" text="Upload an image" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="26.0">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="W_RESIZE" />
+               </cursor>
+            </TextField>
+         </children></AnchorPane>
+   </bottom>
+</BorderPane>
